@@ -1,9 +1,9 @@
 package com.company;
 
+//控件大小屏幕适配
 public class CssNormalization {
 
 	private String unit = "px";
-	private char emptych = ' ';
 	private double width = 400;
 	private double height = 600;
 

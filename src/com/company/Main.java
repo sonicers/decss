@@ -6,15 +6,27 @@ public class Main {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
+        //动画css代码分离
         separate();
+        //控件大小屏幕适配
         normalization();
+        //字体大小屏幕适配
+        fontSizeNormalization();
+
     }
 
-    private static void normalization(){
-        String originFileName = "/Users/xiezhaofei/html/target.txt";
+    private static void fontSizeNormalization() {
+        String originFileName = "/Users/xiezhaofei/html/tmp2.txt";
         String targeFileName = "/Users/xiezhaofei/html/result.txt";
+        CssFontSizeNormalization cssFontSizeNormalization = new CssFontSizeNormalization(originFileName, targeFileName, 64.69f);
+        cssFontSizeNormalization.exec();
+    }
 
-        if(new File(targeFileName).exists()){
+    private static void normalization() {
+        String originFileName = "/Users/xiezhaofei/html/tmp1.txt";
+        String targeFileName = "/Users/xiezhaofei/html/tmp2.txt";
+
+        if (new File(targeFileName).exists()) {
             new File(targeFileName).delete();
         }
         try {
@@ -24,18 +36,18 @@ public class Main {
             e1.printStackTrace();
         }
 
-        CssNormalization cssMaker = new CssNormalization(414,652.05);
-        FileReader fr=null;
+        CssNormalization cssMaker = new CssNormalization(414, 652.05);
+        FileReader fr = null;
         BufferedReader bf = null;
-        BufferedWriter out = null ;
+        BufferedWriter out = null;
         try {
             //文件输入
             fr = new FileReader(originFileName);
             bf = new BufferedReader(fr);
 
             //文件输出
-            out = new  BufferedWriter( new  OutputStreamWriter(
-                    new  FileOutputStream(targeFileName,  true )));
+            out = new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream(targeFileName, true)));
 
 
             String str;
@@ -49,9 +61,9 @@ public class Main {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }finally{
+        } finally {
             try {
-                if(bf!=null){
+                if (bf != null) {
                     bf.close();
                 }
             } catch (IOException e) {
@@ -59,7 +71,7 @@ public class Main {
                 e.printStackTrace();
             }
             try {
-                if(fr!=null){
+                if (fr != null) {
                     fr.close();
                 }
             } catch (IOException e) {
@@ -67,7 +79,7 @@ public class Main {
                 e.printStackTrace();
             }
             try {
-                if(out!=null){
+                if (out != null) {
                     out.close();
                 }
             } catch (IOException e) {
@@ -77,11 +89,11 @@ public class Main {
         }
     }
 
-    private static void separate(){
+    private static void separate() {
         String originFileName = "/Users/xiezhaofei/html/origin.txt";
-        String targeFileName = "/Users/xiezhaofei/html/target.txt";
+        String targeFileName = "/Users/xiezhaofei/html/tmp1.txt";
         String cssFileName = "/Users/xiezhaofei/html/css.txt";
-        CssSeparateAni cssSeparate = new CssSeparateAni(originFileName,targeFileName,cssFileName);
+        CssSeparateAni cssSeparate = new CssSeparateAni(originFileName, targeFileName, cssFileName);
         cssSeparate.separareAni();
     }
 }
