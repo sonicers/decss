@@ -44,6 +44,7 @@ public class Main {
             while ((str = bf.readLine()) != null) {
                 result = cssMaker.trimCss(str);
                 out.write(result);
+                out.newLine();
             }
 
         } catch (IOException e) {
