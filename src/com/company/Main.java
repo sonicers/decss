@@ -13,11 +13,21 @@ public class Main {
         //字体大小屏幕适配
         fontSizeNormalization();
 
+        //style2Id();
+
+    }
+
+    private static void style2Id() {
+        String originFileName = "/Users/xiezhaofei/html/tmp3.txt";
+        String targeFileName = "/Users/xiezhaofei/html/result.txt";
+        String idFileName = "/Users/xiezhaofei/html/id.txt";
+        CssStyle2Id cssStyle2Id = new CssStyle2Id(originFileName, targeFileName, idFileName);
+        cssStyle2Id.exec();
     }
 
     private static void fontSizeNormalization() {
         String originFileName = "/Users/xiezhaofei/html/tmp2.txt";
-        String targeFileName = "/Users/xiezhaofei/html/result.txt";
+        String targeFileName = "/Users/xiezhaofei/html/tmp3.txt";
         CssFontSizeNormalization cssFontSizeNormalization = new CssFontSizeNormalization(originFileName, targeFileName, 64.69f);
         cssFontSizeNormalization.exec();
     }
@@ -36,7 +46,7 @@ public class Main {
             e1.printStackTrace();
         }
 
-        CssNormalization cssMaker = new CssNormalization(414, 652.05);
+        CssViewSizeNormalization cssMaker = new CssViewSizeNormalization(414, 652.05);
         FileReader fr = null;
         BufferedReader bf = null;
         BufferedWriter out = null;

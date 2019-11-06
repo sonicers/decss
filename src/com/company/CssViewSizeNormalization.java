@@ -1,7 +1,7 @@
 package com.company;
 
 //控件大小屏幕适配
-public class CssNormalization {
+public class CssViewSizeNormalization {
 
 	private String unit = "px";
 	private double width = 400;
@@ -11,7 +11,7 @@ public class CssNormalization {
 	private String[] HEIGHT = new String[]{"height", "margin-top", "top", "margin-bottom", "bottom"};
 
 
-	public CssNormalization(double w, double h) {
+	public CssViewSizeNormalization(double w, double h) {
 		width = w;
 		height = h;
 	}
@@ -88,7 +88,6 @@ public class CssNormalization {
 				inputString = inputString.replace(keyValue, "");
 			}
 		}
-
 
 		return inputString;
 	}
